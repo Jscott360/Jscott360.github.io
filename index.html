@@ -1,122 +1,92 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Sun, Moon, Github, Linkedin } from "lucide-react";
-import { motion } from "framer-motion";
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeremye Scott</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  </head>
+  <body class="dark">
+    <button id="darkModeToggle">🌙</button>
 
-export default function JeremyePortfolio() {
-  const [darkMode, setDarkMode] = useState(true);
-
-  const toggleDarkMode = () => setDarkMode(!darkMode);
-
-  const buttonClass =
-    "border border-white text-white hover:bg-white hover:text-black transition-all duration-300 px-6 py-2 rounded-full text-sm font-medium";
-
-  const textGrayClass = darkMode ? "text-gray-300" : "text-gray-600";
-
-  const techStack = [
-    { name: "Python", logo: "devicon-python-plain" },
-    { name: "OpenAI", logo: "simple-icons:openai" },
-    { name: "Java", logo: "devicon-java-plain" },
-    { name: "C++", logo: "devicon-cplusplus-plain" },
-    { name: "JavaScript", logo: "devicon-javascript-plain" },
-    { name: "HTML", logo: "devicon-html5-plain" },
-    { name: "Illustrator", logo: "devicon-illustrator-plain" },
-    { name: "Google Analytics", logo: "simple-icons:googleanalytics" },
-    { name: "Google Ads", logo: "simple-icons:googleads" }
-  ];
-
-  return (
-    <div className={`transition-colors duration-500 font-sans ${darkMode ? "bg-[#0f0f0f] text-white" : "bg-white text-black"}`}>
-      <div className="fixed top-4 right-4 z-50">
-        <Button onClick={toggleDarkMode} variant="ghost">
-          {darkMode ? <Sun /> : <Moon />}
-        </Button>
+    <section id="hero" class="center">
+      <h1>Jeremye Scott</h1>
+      <p>Executive | Cannabis Innovator | Designer | Music Artist</p>
+      <div class="button-group">
+        <a href="https://github.com/YOURUSERNAME" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/YOURPROFILE" target="_blank">LinkedIn</a>
+        <a href="/resume.pdf" download>Download Resume</a>
       </div>
+    </section>
 
-      {/* Hero Section */}
-      <section className="min-h-screen flex flex-col justify-center items-center px-6 text-center">
-        <motion.h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>Jeremye Scott</motion.h1>
-        <motion.p className={`text-md md:text-xl mt-4 max-w-xl text-gray-400`} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.2 }}>
-          Executive | Cannabis Innovator | Designer | Music Artist
-        </motion.p>
-        <div className="flex gap-4 mt-10 flex-wrap justify-center">
-          <a href="https://github.com/YOURUSERNAME" target="_blank"><Button className={buttonClass}><Github className="mr-2" />GitHub</Button></a>
-          <a href="https://linkedin.com/in/YOURPROFILE" target="_blank"><Button className={buttonClass}><Linkedin className="mr-2" />LinkedIn</Button></a>
-          <a href="/resume.pdf" download><Button className={buttonClass}>Download Resume</Button></a>
+    <section id="features">
+      <h2>Feature Projections</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>AI Tools for Cannabis</h3>
+          <p>A brief description of this projection and how it supports Evo Plastics or personal vision.</p>
         </div>
-      </section>
-
-      {/* Feature Projections */}
-      <section className="py-32 px-6 text-center max-w-5xl mx-auto">
-        <motion.h2 className="text-4xl font-bold mb-12" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.6 }}>Feature Projections</motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {["AI Tools for Cannabis", "Smart Inventory Management", "Personal Creative Studio", "Label Customization Portal"].map((title, i) => (
-            <motion.div key={i} className="bg-[#1f1f1f] dark:bg-[#181818] p-6 rounded-2xl shadow-lg" whileHover={{ scale: 1.03 }}>
-              <h3 className="text-xl font-semibold mb-2">{title}</h3>
-              <p className="text-gray-400">A brief description of this projection and how it supports Evo Plastics or personal vision.</p>
-            </motion.div>
-          ))}
+        <div class="card">
+          <h3>Smart Inventory Management</h3>
+          <p>A brief description of this projection and how it supports Evo Plastics or personal vision.</p>
         </div>
-      </section>
+        <div class="card">
+          <h3>Personal Creative Studio</h3>
+          <p>A brief description of this projection and how it supports Evo Plastics or personal vision.</p>
+        </div>
+        <div class="card">
+          <h3>Label Customization Portal</h3>
+          <p>A brief description of this projection and how it supports Evo Plastics or personal vision.</p>
+        </div>
+      </div>
+    </section>
 
-      {/* About Section */}
-      <section className="py-32 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-          <img src="/your-photo.jpg" alt="Jeremye Scott" className="rounded-3xl shadow-xl w-full" />
-        </motion.div>
-        <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-          <h2 className="text-4xl font-bold mb-6">About Me</h2>
-          <p className="text-lg leading-relaxed text-gray-400">
-            I’m a driven entrepreneur with expertise in cannabis packaging, branding, and software. I design things, build things, and make music — all with attention to detail and high creative standards.
-          </p>
+    <section id="about" class="center">
+      <h2>About Me</h2>
+      <p>
+        I’m a driven entrepreneur with expertise in cannabis packaging, branding, and software.
+        I design things, build things, and make music — all with attention to detail and high creative standards.
+      </p>
+      <h3>Experience</h3>
+      <ul>
+        <li>CEO @ Evo Plastics (2022–Present)</li>
+        <li>Creative Director, Cannabis Startups</li>
+        <li>Freelance Label Designer (2018–2022)</li>
+      </ul>
+      <h3>Recently Used Technologies</h3>
+      <div class="tech-grid">
+        <div><iconify-icon icon="devicon-python-plain"></iconify-icon><span>Python</span></div>
+        <div><iconify-icon icon="simple-icons:openai"></iconify-icon><span>OpenAI</span></div>
+        <div><iconify-icon icon="devicon-java-plain"></iconify-icon><span>Java</span></div>
+        <div><iconify-icon icon="devicon-cplusplus-plain"></iconify-icon><span>C++</span></div>
+        <div><iconify-icon icon="devicon-javascript-plain"></iconify-icon><span>JavaScript</span></div>
+        <div><iconify-icon icon="devicon-html5-plain"></iconify-icon><span>HTML</span></div>
+        <div><iconify-icon icon="devicon-illustrator-plain"></iconify-icon><span>Illustrator</span></div>
+        <div><iconify-icon icon="simple-icons:googleanalytics"></iconify-icon><span>Google Analytics</span></div>
+        <div><iconify-icon icon="simple-icons:googleads"></iconify-icon><span>Google Ads</span></div>
+      </div>
+    </section>
 
-          {/* Experience */}
-          <div className="mt-8">
-            <h3 className="text-2xl font-semibold mb-4">Experience</h3>
-            <ul className="text-left space-y-2 text-gray-400">
-              <li>CEO @ Evo Plastics (2022–Present)</li>
-              <li>Creative Director, Cannabis Startups</li>
-              <li>Freelance Label Designer (2018–2022)</li>
-            </ul>
-          </div>
+    <section id="music" class="center">
+      <h2>Music</h2>
+      <p>I also make music. Here’s some recent work.</p>
+      <iframe
+        style="border-radius:12px"
+        src="https://open.spotify.com/embed/playlist/YOURPLAYLISTID"
+        width="100%"
+        height="152"
+        frameborder="0"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+        loading="lazy"
+      ></iframe>
+    </section>
 
-          {/* Tech Stack */}
-          <div className="mt-12">
-            <h3 className="text-2xl font-semibold mb-4">Recently Used Technologies</h3>
-            <div className="grid grid-cols-3 sm:grid-cols-4 gap-6">
-              {techStack.map((tech, i) => (
-                <motion.div key={i} whileHover={{ scale: 1.1 }} className="flex flex-col items-center text-gray-400">
-                  <i className={`iconify text-4xl`} data-icon={tech.logo}></i>
-                  <span className="mt-2 text-sm">{tech.name}</span>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-      </section>
+    <footer class="center">
+      <p>Made with ❤️ by Jeremye Scott</p>
+      <p>&copy; <span id="year"></span> Jeremye Scott</p>
+    </footer>
 
-      {/* Music Section */}
-      <section className="py-32 px-6 text-center max-w-3xl mx-auto">
-        <h2 className="text-4xl font-bold mb-6">Music</h2>
-        <p className="mb-8 text-gray-400">
-          I also make music. Here’s some recent work.
-        </p>
-        <iframe
-          style={{ borderRadius: "12px" }}
-          src="https://open.spotify.com/embed/playlist/YOURPLAYLISTID"
-          width="100%"
-          height="152"
-          frameBorder="0"
-          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
-          loading="lazy"
-        ></iframe>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-16 text-center text-gray-500 text-sm">
-        <p className="mb-2">Made with ❤️ by Jeremye Scott</p>
-        <p>© {new Date().getFullYear()} Jeremye Scott</p>
-      </footer>
-    </div>
-  );
-}
+    <script src="script.js"></script>
+  </body>
+</html>
