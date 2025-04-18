@@ -1,4 +1,1 @@
-git add CNAME
-git commit -m "Add custom domain JeremyeScott.me"
-git push origin main
-
+jeremyescott.me
